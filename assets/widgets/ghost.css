@@ -1,6 +1,6 @@
-#header.alt .welcome .body-ghost{
-    width:69vw;
-    height:40vh;
+#header.alt .welcome .body-ghost {
+    width: 69vw;
+    height: 40vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -8,12 +8,18 @@
     /* background-color: rgba(255, 255, 255, 0.247); */
     padding-top: 0;
 }
+
 #header.alt .welcome .ghost-body {
     box-sizing: content-box !important;
 }
-.ghost-container,.ghost,.ghost-head
-.ghost-face,.eyes-row,.eyes-row div,
-.mouth-row,.mouth-row div{
+
+.ghost-container,
+.ghost,
+.ghost-head .ghost-face,
+.eyes-row,
+.eyes-row div,
+.mouth-row,
+.mouth-row div {
     box-sizing: content-box !important;
 }
 
@@ -75,7 +81,8 @@
     z-index: 1;
 }
 
-.eyes-row, .mouth-row {
+.eyes-row,
+.mouth-row {
     position: relative;
     height: 10px;
 }
@@ -293,7 +300,8 @@
     width: 6px;
 }
 
-.star.pointy .star-element:before, .star.pointy .star-element:after {
+.star.pointy .star-element:before,
+.star.pointy .star-element:after {
     content: "";
     display: block;
     position: absolute;
@@ -317,15 +325,21 @@
     transform: skewY(-60deg);
 }
 
-.star.orange .star-element, .star.orange .star-element:before, .star.orange .star-element:after {
+.star.orange .star-element,
+.star.orange .star-element:before,
+.star.orange .star-element:after {
     background-color: #DF814D;
 }
 
-.star.yellow .star-element, .star.yellow .star-element:before, .star.yellow .star-element:after {
+.star.yellow .star-element,
+.star.yellow .star-element:before,
+.star.yellow .star-element:after {
     background-color: #FFD186;
 }
 
-.star.blue .star-element, .star.blue .star-element:before, .star.blue .star-element:after {
+.star.blue .star-element,
+.star.blue .star-element:before,
+.star.blue .star-element:after {
     background-color: #83D0BC;
 }
 
@@ -514,6 +528,7 @@
     0% {
         top: 0;
     }
+
     100% {
         top: 8px;
     }
@@ -523,6 +538,7 @@
     0% {
         top: 0;
     }
+
     100% {
         top: 8px;
     }
@@ -532,6 +548,7 @@
     0% {
         transform: rotate(-735deg) scale(0, 0);
     }
+
     100% {
         transform: rotate(0) scale(1, 1);
     }
@@ -541,6 +558,7 @@
     0% {
         transform: rotate(-735deg) scale(0, 0);
     }
+
     100% {
         transform: rotate(0) scale(1, 1);
     }
@@ -550,6 +568,7 @@
     0% {
         transform: rotate(0) scale(1, 1);
     }
+
     100% {
         transform: rotate(360deg) scale(0, 0);
     }
@@ -559,6 +578,7 @@
     0% {
         transform: rotate(0) scale(1, 1);
     }
+
     100% {
         transform: rotate(360deg) scale(0, 0);
     }
@@ -568,15 +588,19 @@
     0% {
         transform: rotate(0deg) scale(1, 1);
     }
+
     25% {
         transform: rotate(10deg) scale(0.8, 0.8);
     }
+
     50% {
         transform: rotate(0deg) scale(0.9, 0.9);
     }
+
     75% {
         transform: rotate(-20deg) scale(0.6, 0.6);
     }
+
     100% {
         transform: rotate(0deg) scale(1, 1);
     }
@@ -586,15 +610,19 @@
     0% {
         transform: rotate(0deg) scale(1, 1);
     }
+
     25% {
         transform: rotate(10deg) scale(0.8, 0.8);
     }
+
     50% {
         transform: rotate(0deg) scale(0.9, 0.9);
     }
+
     75% {
         transform: rotate(-20deg) scale(0.6, 0.6);
     }
+
     100% {
         transform: rotate(0deg) scale(1, 1);
     }
@@ -604,15 +632,19 @@
     0% {
         transform: rotate(-45deg);
     }
+
     25% {
         transform: rotate(-55deg);
     }
+
     50% {
         transform: rotate(-45deg);
     }
+
     75% {
         transform: rotate(-55deg);
     }
+
     100% {
         transform: rotate(-45deg);
     }
@@ -622,15 +654,19 @@
     0% {
         transform: rotate(-45deg);
     }
+
     25% {
         transform: rotate(-55deg);
     }
+
     50% {
         transform: rotate(-45deg);
     }
+
     75% {
         transform: rotate(-55deg);
     }
+
     100% {
         transform: rotate(-45deg);
     }
