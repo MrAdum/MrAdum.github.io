@@ -3141,7 +3141,9 @@ table.alt tbody tr td {
 	max-width: 75%;
 }
 
-.dynamic-content {}
+.dynamic-content {
+	margin-right: 0;
+}
 
 #header.alt .welcome {
 	position: relative;
