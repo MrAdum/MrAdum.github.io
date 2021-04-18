@@ -34,7 +34,18 @@ figure.sample img {
     position: relative;
     top: 50%;
     transform: translateY(-50%)
-
+}
+@media screen and (max-width:864px){
+    figure.sample {
+    max-height: 180px;
+    margin: 20px 0;
+    }
+    
+    figure.sample img{
+        position: relative;
+        top: 50%;
+        transform: translateY(0%)
+    }
 }
 
 figure.sample .title {
@@ -173,13 +184,4 @@ figure.sample.hover figcaption {
 
 figure.sample:hover h4{
     opacity: 1;
-}
-body {
-    background-color: #212121;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
-    margin: 0;
-    height: 100%;
 }
