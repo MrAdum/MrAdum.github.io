@@ -399,8 +399,16 @@
 			</section>
 			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 		</footer>
-
 	</div>
+
+	<div class="loading">
+		<h3>加载中</h3>
+	</div>
+	<script>
+		$(window).on("load",function(){
+			$(".loading").fadeOut("slow")
+		})
+	</script>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>

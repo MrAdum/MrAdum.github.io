@@ -57,10 +57,9 @@ body {
 .setposition{
     position: relative;
     top: 0px;
-    left: 0px;
     width: 500px;
     height: 130px;
-    background-color: #eee;
+    /* background-color: rgba(255, 209, 209, 0.322); */
 }
 
 #textdeformation_container {
@@ -68,8 +67,9 @@ body {
     position: relative;
     margin: auto;
     height: 80pt;
-    top: 0;
+    top: -20px;
     bottom: 0;
+    left: -250px;
 
     /* 这个过滤器很神奇哦~可以试着注释一下，看变形是如何工作的~ */
     filter: url(#threshold) blur(0.6px);

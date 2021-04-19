@@ -111,6 +111,7 @@ section {
 
 body {
 	line-height: 1;
+	overflow-x: hidden;
 }
 
 ol,
@@ -2805,10 +2806,9 @@ header.major.special h2:after {
 
 footer.major {
 	margin-top: 3em;
-}
-
-footer.major .textdeformation{
-    position: relative;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 60px;
 }
 
 @media screen and (max-width: 736px) {
@@ -3791,4 +3791,16 @@ body.is-preload #header.alt .logo {
 		max-width: 100%;
 	}
 
+}
+
+/*加载动画*/
+.loading{
+position: absolute;
+width: 98vw;
+height: 100vh;
+background-color: rgba(163, 163, 163, 0.836);
+top: 0;
+margin: 0;
+margin: 0;
+padding: 0;
 }
