@@ -11,12 +11,11 @@ const elts = {
   
   /* 要在其中变形的字符串。你可以把这些换成你想要的任何东西！ */
   const texts = [
-  "Can",
-  "I",
-  "have",
-  "one",
-  "click",
-  "triple?"
+  "Sorry!",
+  "I`m",
+  "trying to",
+  "make it",
+  "better"
   ];
   
   
