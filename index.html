@@ -25,6 +25,7 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<script src="./assets/js/jquery.min.js"></script>
 </head>
 
 <body class="is-preload">
@@ -341,23 +342,25 @@
 				</header>
 				<footer class="major">
 					<!-- 两个文本部分 -->
-					<div id="textdeformation_container">
-						<span id="text1"></span>
-						<span id="text2"></span>
+					<div class="setposition">
+						<div id="textdeformation_container">
+							<span id="text1"></span>
+							<span id="text2"></span>
+						</div>
+				
+						<!-- 用于创建合并效果的 svg 过滤器 -->
+						<svg id="filter">
+							<defs>
+								<filter id="threshold">
+									<!-- 这里只是一个阈值效果--像素足够高的地方不透明度设置为完全不透明，其他地方像素设置为完全透明。 -->
+									<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+													0 1 0 0 0
+													0 0 1 0 0
+													0 0 0 255 -140" />
+								</filter>
+							</defs>
+						</svg>
 					</div>
-
-					<!-- 用于创建合并效果的 svg 过滤器 -->
-					<svg id="filter">
-						<defs>
-							<filter id="threshold">
-								<!-- 这里只是一个阈值效果--像素足够高的地方不透明度设置为完全不透明，其他地方像素设置为完全透明。 -->
-								<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
-												0 1 0 0 0
-												0 0 1 0 0
-												0 0 0 255 -140" />
-							</filter>
-						</defs>
-					</svg>
 					<link rel="stylesheet" href="./assets/widgets/textdeformation.css">
 					<script src="./assets/widgets/textdeformation.js"></script>
 				</footer>
