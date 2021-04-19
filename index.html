@@ -347,7 +347,7 @@
 							<span id="text1"></span>
 							<span id="text2"></span>
 						</div>
-				
+
 						<!-- 用于创建合并效果的 svg 过滤器 -->
 						<svg id="filter">
 							<defs>
@@ -402,10 +402,17 @@
 	</div>
 
 	<div class="loading">
-		<h3>加载中</h3>
+		<link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Lato&subset=latin">
+		<div class="loader">
+			<span class="binary"></span>
+			<span class="binary"></span>
+			<span class="getting-there">LOADING MY STUFF...</span>
+		</div>
 	</div>
+
 	<script>
-		$(window).on("load",function(){
+		$(window).on("load", function () {
 			$(".loading").fadeOut("slow")
 		})
 	</script>
