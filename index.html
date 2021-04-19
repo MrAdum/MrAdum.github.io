@@ -40,16 +40,19 @@
 						Hello
 					</p>
 					<ul class="content_container_list">
-						<li class="content_container_list_item">world !</li>
-						<li class="content_container_list_item">friend !</li>
-						<li class="content_container_list_item">users !</li>
-						<li class="content_container_list_item">everybody !</li>
+						<li class="content_container_list_item">world!</li>
+						<li class="content_container_list_item">friend!</li>
+						<li class="content_container_list_item">users!</li>
+						<li class="content_container_list_item">everybody!</li>
 					</ul>
 				</div>
 				<br>
 			</div>
+			<div class="logo">
+				<div class="img"></div>
+				<img src="./images/签名.png" alt="">
+			</div>
 			<div class="welcome">
-
 				<div class="body-ghost">
 					<div class="scene-container stars-out" tabindex="1">
 						<div class="ghost-container">
@@ -126,8 +129,8 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a href="#intro" class="active">日常收藏</a></li>
-				<li><a href="#first">关于ADUM</a></li>
+				<li><a href="#first" class="active">关于ADUM</a></li>
+				<li><a href="#intro">日常收藏</a></li>
 				<li><a href="#second">我的DEMO</a></li>
 				<li><a href="#cta">我的笔记</a></li>
 			</ul>
@@ -135,26 +138,121 @@
 
 		<!-- Main -->
 		<div id="main">
+			<!-- First Section -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>关于我自己</h2>
+					<p>一个渴望知识，向上探索的人</p>
+				</header>
+				<div class="blog-slider">
+					<div class="blog-slider_wrp swiper-wrapper">
+
+						<div class="blog-slider_item swiper-slide">
+							<!-- <div class="blog-slider_img">
+								<img src="./images/云和蓝.jpg" alt="">
+							</div> -->
+							<div class="blog-slider_content">
+								<span class="blog-slider_code">2018 ~ 2022</span>
+								<div class="blog-slider_title">教育经历</div>
+								<div class="blog-slider_text">
+									<ul>
+										<li>即将毕业于上海电力大学，主修<b> 网络工程 </b>专业</li>
+										<li>正在网课机构 <b>朝夕教育</b> 学习C#.Net全栈开发</li>
+									</ul>
+								</div>
+								<div class="blog-slider_title">实践经历</div>
+								<div class="blog-slider_text">
+									<ul>
+										<li>参加过上海市计算机能力应用大赛并获得<b>三等奖</b></li>
+										<li>曾实习于<b>云南德基智能科技</b>，任职工程师助理</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- 相同的格式，复制了两次，修改自己需要的内容 -->
+						<div class="blog-slider_item swiper-slide">
+							<!-- <div class="blog-slider_img">
+								<img src="./images/树林与月.jpg" alt="">
+							</div> -->
+							<div class="blog-slider_content">
+								<!-- <span class="blog-slider_code">21 February 2021</span> -->
+								<div class="blog-slider_title" style="margin-bottom: 5px;"><span
+										style="color: rgb(151, 151, 151);font-size: .5em;font-weight: normal;">★★★★★:精通
+										| ★★★★:能创作 | ★★★:能运用 | ★★:能看懂代码 | ★:有了解<br></span>我的技能及掌握程度
+								</div>
+								<div class="blog-slider_text_ability">
+									<ul>
+										<li class="li_ability">HTML5 <span>☆★★★★</span></li>
+										<li class="li_ability">JavaScript <span>☆☆★★★</span></li>
+										<li class="li_ability">CSS3 <span>☆☆☆★★</span></li>
+										<li class="li_ability">Vue.js <span>☆☆★★★</span></li>
+										<li class="li_ability">React.js <span>☆☆☆★★</span></li>
+										<li class="li_ability">Java <span>☆☆☆★★</span></li>
+										<li class="li_ability">C#.Net <span>☆☆☆★★</span></li>
+										<li class="li_ability">C，C++ <span>☆☆★★★</span></li>
+										<li class="li_ability">SqlServer <span>☆☆★★★</span></li>
+										<li class="li_ability">PhotoShop <span>☆★★★★</span></li>
+										<li class="li_ability">Premiere <span>☆☆★★★</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="blog-slider_item swiper-slide">
+							<!-- <div class="blog-slider_img">
+								<img src="./images/红云月.jpg" alt="">
+							</div> -->
+							<div class="blog-slider_content">
+								<span class="blog-slider_code">Self description</span>
+								<div class="blog-slider_title">有关个人</div>
+								<div class="blog-slider_text">
+									一个爱打乒乓球喜欢拍照<br><br>执着于细节，对未来抱有幻想，<br><br>对世界充满好奇，还会在青春吹牛逼的<br><br><b>未来企业家</b>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="blog-slider_pagination"></div>
+				</div>
+				<script src='./assets/widgets/libs/swiper-bundle.min.js'>
+				</script>
+				<script>
+					// import './assets/widgets/libs/swiper-bundle.min.js'
+					var swiper = new Swiper('.blog-slider', {
+						spaceBetween: 30,
+						effect: 'fade',
+						loop: true,
+						mousewheel: {
+							invert: false,
+						},
+
+						pagination: {
+							el: '.blog-slider_pagination',
+							clickable: true,
+						}
+					});
+
+				</script>
+			</section>
 			<!-- Introduction -->
 			<section id="intro" class="main">
 				<div class="spotlight">
 					<header class="major">
-						<h2>发现精美的图片</h2>
+						<h2>发现美</h2>
 					</header>
 					<div class="content">
 						<figure class="sample">
 							<!-- 展示需要分3组图片，可自行调整 -->
-							<img src="./images/贝姐.png" alt="sample1" />
+							<img src="./images/树林与月.jpg" alt="sample1" />
 							<div class="title">
 								<div>
-									<h4>Hungary</h4>
+									<h4>天紫月</h4>
 								</div>
 							</div>
 							<figcaption>
 								<!-- 此处文字随意写的 -->
-								<p>Budapest is the capital of Hungary, the main political, commercial, transportation
-									and economic center and the
-									largest city of the country.</p>
+								<p>月亮怎么这样啊！<br>Moon, how could you!</p>
 							</figcaption>
 						</figure>
 
@@ -163,7 +261,7 @@
 							<img src="./images/黄色玫瑰.jpg" alt="sample2" />
 							<div class="title">
 								<div>
-									<h4>New York</h4>
+									<h4>金玫瑰 </h4>
 								</div>
 							</div>
 							<figcaption>
@@ -196,85 +294,12 @@
 				</div>
 			</section>
 
-			<!-- First Section -->
-			<section id="first" class="main special">
-				<header class="major">
-					<h2>关于我自己</h2>
-					<p>一个渴望知识，向上探索的人</爬>
-				</header>
-				<div class="blog-slider">
-					<div class="blog-slider_wrp swiper-wrapper">
-
-						<div class="blog-slider_item swiper-slide">
-							<div class="blog-slider_img">
-								<img src="./images/云和蓝.jpg" alt="">
-							</div>
-							<div class="blog-slider_content">
-								<span class="blog-slider_code">21 February 2021</span>
-								<div class="blog-slider_title">Paperiza</div>
-								<div class="blog-slider_text">A beautiful and minimal wallpaper app! Change your desktop
-									wallpaper
-									automatically with beautiful images from Unsplash, Pixabay and Pexels.</div>
-							</div>
-						</div>
-
-						<!-- 相同的格式，复制了两次，修改自己需要的内容 -->
-						<div class="blog-slider_item swiper-slide">
-							<div class="blog-slider_img">
-								<img src="./images/树林与月.jpg" alt="">
-							</div>
-							<div class="blog-slider_content">
-								<span class="blog-slider_code">21 February 2021</span>
-								<div class="blog-slider_title">Welcome to AMD</div>
-								<div class="blog-slider_text">High frame rates mean high win rates on a laptop powered
-									by the world’s best
-									mobile processor for gamers.</div>
-							</div>
-						</div>
-
-						<div class="blog-slider_item swiper-slide">
-							<div class="blog-slider_img">
-								<img src="./images/红云月.jpg" alt="">
-							</div>
-							<div class="blog-slider_content">
-								<span class="blog-slider_code">21 February 2021</span>
-								<div class="blog-slider_title">Artificial Intelligence</div>
-								<div class="blog-slider_text">AI will change the way we do business and, ultimately,
-									change our lives. It
-									offers your organisation personalization, prediction and security as never before.
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="blog-slider_pagination"></div>
-				</div>
-				<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.15/swiper-bundle.min.js'>
-				</script>
-				<script>
-					var swiper = new Swiper('.blog-slider', {
-						spaceBetween: 30,
-						effect: 'fade',
-						loop: true,
-						mousewheel: {
-							invert: false,
-						},
-
-						pagination: {
-							el: '.blog-slider_pagination',
-							clickable: true,
-						}
-					});
-
-				</script>
-			</section>
 
 			<!-- Second Section -->
 			<section id="second" class="main special">
 				<header class="major">
 					<h2>我自己做了一些小工具</h2>
-					<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-						posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+					<p>熟能生巧，巧能生妙。</p>
 				</header>
 				<ul class="statistics">
 					<li class="style1">
@@ -305,25 +330,36 @@
 					vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis
 					porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam
 					porta. Cras eu ornare dui curabitur lacinia.</p>
-				<footer class="major">
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Learn More</a></li>
-					</ul>
-				</footer>
+
 			</section>
 
 			<!-- Get Started -->
 			<section id="cta" class="main special">
 				<header class="major">
 					<h2>学习笔记/我的博客</h2>
-					<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-						posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+					<p>抱歉！正在开发中……</p>
 				</header>
 				<footer class="major">
-					<ul class="actions special">
-						<li><a href="generic.html" class="button primary">Get Started</a></li>
-						<li><a href="generic.html" class="button">Learn More</a></li>
-					</ul>
+					<!-- 两个文本部分 -->
+					<div id="textdeformation_container">
+						<span id="text1"></span>
+						<span id="text2"></span>
+					</div>
+
+					<!-- 用于创建合并效果的 svg 过滤器 -->
+					<svg id="filter">
+						<defs>
+							<filter id="threshold">
+								<!-- 这里只是一个阈值效果--像素足够高的地方不透明度设置为完全不透明，其他地方像素设置为完全透明。 -->
+								<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+												0 1 0 0 0
+												0 0 1 0 0
+												0 0 0 255 -140" />
+							</filter>
+						</defs>
+					</svg>
+					<link rel="stylesheet" href="./assets/widgets/textdeformation.css">
+					<script src="./assets/widgets/textdeformation.js"></script>
 				</footer>
 			</section>
 
