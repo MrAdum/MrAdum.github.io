@@ -54,7 +54,8 @@
 body {
     margin: 0px;
 }
-.setposition{
+
+.setposition {
     position: relative;
     top: 0px;
     width: 500px;
@@ -84,4 +85,19 @@ body {
     font-size: 80pt;
     text-align: center;
     user-select: none;
+}
+
+@media screen and (max-width: 640px) {
+    .setposition {
+        display: none;
+    }
+
+    #textdeformation_container {
+        display: none;
+    }
+
+    #text1,
+    #text2 {
+        display: none;
+    }
 }

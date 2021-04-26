@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/vue.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>快速背单词</title>
+</head>
+
+<body>
+    <div class="app">
+        <br>
+        <div class="main">
+            <div class="form-group" :class="{'active':translated==true}">
+                <div class="in">
+                    <textarea cols="30" rows="23" class="form-control" placeholder="输入目标文本"
+                        v-model="wordsStr"></textarea>
+                    <br>
+                    <a class="back_btn" href="../index.html">返回主页</a>
+                    <button type="submit" class="btn btn-default" @click="transform"><i
+                            class="glyphicon glyphicon-chevron-up"></i> Transform</button>
+                </div>
+                <div class="out" :class="{'showCN':isshow == true}">
+                    <div class="output" v-for="(word,index) in wordsout">
+                        <div class="en" :class="{'en-selected':word.sel}" @click="select(word)">
+                            {{word.en}}
+                        </div>
+                        <div class="ch">
+                            <div class="ch-cell">{{word.cn}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info" v-show=translated @click="release"><i
+                    class="glyphicon glyphicon-grain"></i> RELEASE</button>
+            <button type="submit" class="btn btn-info" style="margin: 0 auto;" v-show=translated @click="back"><i
+                    class="glyphicon glyphicon-chevron-down"></i> BACK</button>
+            <button type="submit" class="btn btn-info" v-show=translated @click="show"><i
+                    class="glyphicon glyphicon-eye-open"></i> SHOW</button>
+            <button type="submit" class="btn btn-warning" v-show=translated @click="remove"><i
+                    class="glyphicon glyphicon-trash"></i> REMOVE</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    new Vue({
+        el: ".app",
+        data() {
+            var regCN = /[\u4e00-\u9fa5]+/g;
+            var translated = false;
+            var isshow = false;
+
+            return {
+                msg: "proficiency 熟练，精通",
+                wordsStr: "",
+                wordsList: [],
+                wordsout: [],
+                isshow,
+                regCN,
+                translated,
+                selected: []
+            }
+        },
+        mounted() {
+            alert(`输入类似如下格式的单词，即可转换为方便记忆的单词卡片。
+            
+        literacy 识字，有文化，读写能力
+        rectify 纠正，修复
+        orientation 方向，方位，目标，熟悉情况，适应，情况介绍
+        hasty 草率的，轻率的，极速的，匆忙的
+        reconcile 使协调，使和解，使顺从于，协调，和解
+        fracture 裂缝，裂痕，使折断
+        deviate 背离，偏离
+        discriminate 区别，辨别，有差别的对待，歧视
+            `)
+        },
+        methods: {
+            back() {
+                this.translated = false
+            },
+            transform() {
+                if (this.wordsStr.length < 2)
+                    alert("没有单词")
+                else {
+                    this.translated = true;
+                    this.wordsout = [];
+                    this.wordsList = this.wordsStr.split(/\n/)
+                    for (let i = 0; i < this.wordsList.length; i++)
+                        this.selected[i] = false
+                    this.wordsList.forEach(element => {
+                        this.wordsout.push({
+                            en: element.match(/[A-z]+/g)[0],
+                            cn: element.match(/[^x00-xff+^y]+/g)[0],
+                            sel: false
+                        })
+                    })
+                    console.log(this.wordsout);
+                }
+            },
+            show() {
+                this.isshow = !this.isshow
+            },
+            select(word) {
+                word.sel = !word.sel
+                console.log(word.sel);
+            },
+            release() {
+                this.wordsout.forEach(word => {
+                    word.sel = false
+                });
+            },
+            remove() {
+                for (let i = 0; i < this.wordsout.length; i++) {
+                    if (this.wordsout[i].sel) {
+                        this.wordsout.splice(i, 1)
+                        i = i - 1
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+<style>
+    body {
+        background-color: #eee;
+        user-select:none;
+    }
+
+    .back_btn{
+        position: absolute;
+        display: block;
+        line-height: 30px;
+        width: 80px;
+        height: 30px;
+        top: 88vh;
+        left: 5vw;
+        border-radius: 20px;
+        background-color: #fff;
+        transition: .1s;
+    }
+    .back_btn:hover{
+        background-color: rgb(243, 243, 243);
+    }
+
+    .btn:focus,
+    .btn:active {
+        outline: none;
+    }
+
+    .app {
+        text-align: center;
+        margin: 0 50px;
+    }
+
+    textarea.form-control {
+        height: 80vh;
+        transition: 0.3s;
+        background-color: #eee;
+    }
+
+    .form-group {
+        margin-bottom: 1vh;
+    }
+
+    .in {
+        height: 90vh;
+        overflow: hidden;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    textarea {
+        height: 90%;
+    }
+
+    .active .in {
+        height: 0;
+    }
+
+    .out {
+        text-align: center;
+        display: inline-block;
+        height: 0px;
+        width: 100%;
+        margin: 0 auto;
+        overflow: auto;
+        border-radius: 10px;
+        transition: .3s;
+    }
+
+    .out::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+    .in::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+    .active .out {
+        height: 85vh;
+    }
+
+    .output {
+        height: 50px;
+        margin: 20px;
+    }
+
+    .en {
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1), 8px 8px 16px -10px rgba(0, 0, 0, .15);
+        padding-top: 6px;
+        font-weight: bold;
+        font-size: 23px;
+        width: 30vw;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        background-color: rgb(255, 242, 242);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .en-selected {
+        box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset, 4px 4px 10px -8px rgba(0, 0, 0, .7) inset;
+        background-color: rgb(255, 235, 235);
+    }
+
+    .ch {
+        margin-left: 2vw;
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1), 8px 8px 16px -10px rgba(0, 0, 0, .15);
+        padding-top: 9px;
+        font-weight: bold;
+        font-size: 22px;
+        width: 50vw;
+        overflow: hidden;
+        height: 100%;
+        float: left;
+        color: rgb(252, 252, 252);
+        user-select: none;
+        background-color: rgb(252, 252, 252);
+        /* transition: 0.2s; */
+    }
+
+    .showCN .ch {
+        color: #000;
+        background-color: rgb(250, 250, 250);
+    }
+
+    .ch:hover {
+        color: #000;
+        background-color: rgb(253, 253, 253);
+        box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset, 4px 4px 10px -8px rgba(0, 0, 0, 0.7) inset;
+    }
+
+    @media screen and (max-width: 800px) {
+        body {
+            background-color: lightblue;
+        }
+
+        .app {
+            margin: 0 7px;
+        }
+
+        .output {
+            height: 6vh;
+        }
+
+        .en {
+            padding: 0;
+            padding-top: 7px;
+            font-size: 2.5vh;
+            border-radius: 23px;
+        }
+
+        .ch {
+            width: 53vw;
+            overflow: hidden;
+            padding: 5px;
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+        .ch:hover {
+            box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1), 8px 8px 16px -10px rgba(0, 0, 0, .15);
+            color: #fff;
+        }
+        .ch:active {
+            color: #000;
+            background-color: rgb(253, 253, 253);
+            box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset, 4px 4px 10px -8px rgba(0, 0, 0, 0.7) inset;
+        }
+
+
+        .ch-cell {
+            display: inline-block;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: middle;
+            padding-bottom: 0;
+            font-size: 15px;
+        }
+    }
+</style>
